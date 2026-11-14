@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b0a">
+<meta name="description" content="DonutClients — a community library of DonutSMP client downloads and setup guides.">
+<title>DonutClients — DonutSMP Client Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0a;--panel:#101613;--panel2:#141d18;--line:#26352c;--text:#f0f5f1;--muted:#99a89e;--green:#b6f36b;--green2:#83c94b;--mono:"DM Mono",monospace;--sans:"Space Grotesk",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#263b2a 0,transparent 48%),var(--bg);color:var(--text);font-family:var(--sans)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+header{height:76px;border-bottom:1px solid #ffffff12;background:#080b0ad9;backdrop-filter:blur(14px);position:sticky;top:0;z-index:10}
+.navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.7px;white-space:nowrap}.brand-icon{width:34px;height:34px;border-radius:10px;background:var(--green);color:#10170c;display:grid;place-items:center;font-weight:900;font-size:19px;box-shadow:0 0 24px #b6f36b30}
+nav{display:flex;gap:25px;color:#aab7ae;font-size:12px}nav a:hover{color:var(--green)}.nav-cta{font:11px var(--mono);border:1px solid #b6f36b66;color:var(--green);padding:10px 13px;border-radius:7px;white-space:nowrap}
+.hero{padding:105px 0 82px;text-align:center;position:relative}.eyebrow{font:10px var(--mono);letter-spacing:.19em;color:var(--green);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}.eyebrow:before,.eyebrow:after{content:"";width:24px;height:1px;background:var(--green);opacity:.7}
+h1{font-size:clamp(48px,8vw,86px);line-height:.98;letter-spacing:-.075em;margin:24px 0 18px}.accent{color:var(--green)}.hero p{max-width:650px;margin:0 auto;color:var(--muted);font-size:15px;line-height:1.8}
+.actions{display:flex;justify-content:center;gap:11px;margin-top:29px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:7px;font-size:12px;font-weight:700;transition:.2s;border:1px solid var(--line)}.primary{background:var(--green);color:#10170c;border-color:var(--green)}.primary:hover{background:#c9ff89;transform:translateY(-2px)}.secondary{background:#ffffff06;color:var(--text)}.secondary:hover{border-color:#71836f}
+.stats{display:flex;justify-content:center;gap:0;margin:55px auto 0;width:min(600px,100%);border:1px solid var(--line);border-radius:9px;background:#ffffff04}.stat{flex:1;padding:16px 12px}.stat+.stat{border-left:1px solid var(--line)}.stat strong{display:block;font-size:22px;letter-spacing:-1px}.stat span{display:block;margin-top:4px;font:9px var(--mono);color:var(--muted);letter-spacing:.12em}
+.section{padding:30px 0 80px}.section-label{font:10px var(--mono);letter-spacing:.18em;color:var(--green);margin-bottom:12px}.section-title{font-size:31px;letter-spacing:-.06em;margin:0}.section-sub{color:var(--muted);font-size:13px;margin:8px 0 24px;line-height:1.7}
+.client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.client{border:1px solid var(--line);background:linear-gradient(145deg,#17221a,#101613 72%);border-radius:10px;overflow:hidden;transition:.2s}.client:hover{transform:translateY(-4px);border-color:#789d5c;box-shadow:0 15px 40px #0005}
+.client-art{height:158px;background:radial-gradient(circle at 50% 50%,#30442c,#151e17 68%);border-bottom:1px solid var(--line);display:grid;place-items:center;position:relative;overflow:hidden}.client-art:before{content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff15;border-radius:50%;box-shadow:0 0 0 25px #ffffff05,0 0 0 50px #ffffff03}.client-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;padding:18px}.fallback{position:relative;z-index:1;color:var(--green);font-size:37px;font-weight:700;letter-spacing:-.08em}.client-no{position:absolute;top:12px;left:12px;z-index:2;font:9px var(--mono);color:#d7e7d9;border:1px solid #ffffff24;background:#080e0bcc;padding:6px 8px;border-radius:4px}
+.client-body{padding:17px}.client-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.client h3{font-size:17px;letter-spacing:-.04em;margin:0}.pill{font:9px var(--mono);color:var(--green);background:#b6f36b12;padding:6px 7px;border-radius:4px;white-space:nowrap}.client p{font-size:11px;color:var(--muted);line-height:1.7;min-height:57px;margin:11px 0 15px}.downloads{display:flex;gap:8px}.downloads .btn{flex:1;padding:10px 7px;font-size:10px}
+.notice{border:1px solid var(--line);background:#ffffff04;border-radius:8px;padding:16px 18px;color:var(--muted);font-size:11px;line-height:1.7;margin-top:20px}.notice strong{color:var(--text)}
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:start}.about-copy p{font-size:13px;line-height:1.9;color:var(--muted)}.about-copy p strong{color:#e7eee8}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{border:1px solid var(--line);background:#ffffff04;padding:18px;border-radius:8px}.mini b{font-size:24px;color:var(--green);display:block}.mini span{font:9px var(--mono);color:var(--muted);letter-spacing:.1em}
+.steps{display:grid;gap:10px}.step{display:grid;grid-template-columns:42px 1fr;gap:15px;border:1px solid var(--line);border-radius:8px;padding:17px;background:#ffffff03}.step-num{width:31px;height:31px;border:1px solid #b6f36b70;color:var(--green);border-radius:6px;display:grid;place-items:center;font:12px var(--mono)}.step h3{font-size:14px;margin:1px 0 7px}.step p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}.step-links{display:flex;gap:14px;margin-top:10px;font:10px var(--mono);color:var(--green)}code{font:10px var(--mono);color:#d9f5c3;background:#b6f36b12;padding:3px 5px;border-radius:3px;overflow-wrap:anywhere}
+.faq{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:17px 2px}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;font-size:13px;font-weight:600}summary::-webkit-details-marker{display:none}summary:after{content:"+";font:18px var(--mono);color:var(--green)}details[open] summary:after{content:"−"}details p{color:var(--muted);font-size:11px;line-height:1.8;max-width:800px;margin:12px 0 0}
+footer{border-top:1px solid #ffffff12;padding:25px 0 32px;color:#78877d;font:9px var(--mono);letter-spacing:.08em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:800px){nav{gap:13px}.client-grid{grid-template-columns:repeat(2,1fr)}.hero{padding:80px 0 65px}.about-grid{grid-template-columns:1fr}}
+@media(max-width:580px){.wrap{width:calc(100% - 30px)}nav{display:none}.client-grid{grid-template-columns:1fr}.client-art{height:185px}.hero{padding:68px 0 55px}.stats{margin-top:38px}.stat{padding:13px 5px}.stat strong{font-size:19px}.stat span{font-size:8px}.section{padding-bottom:60px}.section-title{font-size:27px}}
+</style>
+</head>
+<body>
+<header><div class="wrap navbar">
+<a class="brand" href="#home"><span class="brand-icon">D</span> DonutClients</a>
+<nav><a href="#home">Home</a><a href="#clients">Mods</a><a href="#about">About</a><a href="#guide">Guide</a><a href="#faq">FAQ</a></nav>
+<a class="nav-cta" href="#clients">DOWNLOAD A CLIENT ↓</a>
+</div></header>
+
+<main>
+<section class="hero wrap" id="home">
+<div class="eyebrow">COMMUNITY CLIENT LIBRARY</div>
+<h1>DonutSMP<br><span class="accent">Clients.</span></h1>
+<p>A community hub for exploring DonutSMP client downloads. Browse the collection, compare your options, and follow the setup guide to get started.</p>
+<div class="actions"><a class="btn primary" href="#clients">Browse Clients <span>→</span></a><a class="btn secondary" href="#guide">Installation Guide ↓</a></div>
+<div class="stats">
+<div class="stat"><strong>3</strong><span>CLIENT DOWNLOADS</span></div>
+<div class="stat"><strong>100%</strong><span>FREE TO ACCESS</span></div>
+<div class="stat"><strong>2</strong><span>MIRRORS PER CLIENT</span></div>
+</div>
+</section>
+
+<section class="section wrap" id="clients">
+<div class="section-label">/ CLIENT LIBRARY</div><h2 class="section-title">Client Library</h2>
+<p class="section-sub">Choose a client below to view its download mirrors. Each download opens on its hosting website.</p>
+<div class="client-grid">
+<article class="client">
+<div class="client-art"><span class="client-no">CLIENT 01</span><img src="/corz.png" alt="Corz Client logo" onerror="this.remove();this.nextElementSibling.hidden=false"><span class="fallback" hidden>CORZ</span></div>
+<div class="client-body"><div class="client-head"><h3>Corz Client</h3><span class="pill">CRACKED</span></div><p>Corz Client download listing for DonutSMP players. Choose either available file mirror.</p><div class="downloads"><a class="btn primary" href="https://www.mediafire.com/file/n5p967k5csfprdl/corzclient.jar/file" target="_blank" rel="noopener noreferrer">Download .jar ↗</a><a class="btn secondary" href="https://gofile.io/d/o9YHwRsK" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a></div></div>
+</article>
+<article class="client">
+<div class="client-art"><span class="client-no">CLIENT 02</span><img src="/67.png" alt="67 Client logo" onerror="this.remove();this.nextElementSibling.hidden=false"><span class="fallback" hidden>67</span></div>
+<div class="client-body"><div class="client-head"><h3>67 Client</h3><span class="pill">CRACKED</span></div><p>67 Client download listing for DonutSMP players. Choose either available file mirror.</p><div class="downloads"><a class="btn primary" href="https://www.mediafire.com/file/o8hynxcea61oogm/677client.jar/file" target="_blank" rel="noopener noreferrer">Download .jar ↗</a><a class="btn secondary" href="https://gofile.io/d/jZTYIPMd" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a></div></div>
+</article>
+<article class="client">
+<div class="client-art"><span class="client-no">CLIENT 03</span><img src="/gooba.png" alt="Gooba V2 Client logo" onerror="this.remove();this.nextElementSibling.hidden=false"><span class="fallback" hidden>GOOBA</span></div>
+<div class="client-body"><div class="client-head"><h3>Gooba V2 Client</h3><span class="pill">CRACKED</span></div><p>Gooba V2 Client download listing for DonutSMP players. Choose either available file mirror.</p><div class="downloads"><a class="btn primary" href="https://www.mediafire.com/file/35kbffe0dwflsho/GoobaCracked.jar/file" target="_blank" rel="noopener noreferrer">Download .jar ↗</a><a class="btn secondary" href="https://gofile.io/d/cr2YobCo" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a></div></div>
+</article>
+</div>
+<div class="notice"><strong>Download note:</strong> Files are hosted by third-party services. We do not independently verify the contents or safety of these files. Scan downloads before opening them, and only run software you trust. Compatibility may vary by client.</div>
+</section>
+
+<section class="section wrap" id="about">
+<div class="section-label">/ ABOUT</div><h2 class="section-title">Made for the DonutSMP community</h2>
+<div class="about-grid">
+<div class="about-copy">
+<p><strong>DonutClients</strong> brings a small collection of community-submitted client downloads together in one simple library. Instead of searching across multiple pages, you can find the listed clients and their available download mirrors here.</p>
+<p>Each client may have different features, requirements, and compatibility. Check the information provided by the original creator or file host before installing. DonutClients is an independent community listing and is not affiliated with DonutSMP, Mojang, or the client creators.</p>
+</div>
+<div class="mini-stats"><div class="mini"><b>03</b><span>LISTED CLIENTS</span></div><div class="mini"><b>FREE</b><span>PUBLIC ACCESS</span></div><div class="mini"><b>06</b><span>DOWNLOAD LINKS</span></div><div class="mini"><b>24/7</b><span>WEBSITE ACCESS</span></div></div>
+</div>
+</section>
+
+<section class="section wrap" id="guide">
+<div class="section-label">/ SETUP</div><h2 class="section-title">Installation guide</h2><p class="section-sub">A general guide to installing a .jar mod. Always follow the instructions for the specific client and Minecraft version.</p>
+<div class="steps">
+<div class="step"><div class="step-num">01</div><div><h3>Check the client requirements</h3><p>Before downloading, check the client's official page or readme for its supported Minecraft version, mod loader, and required dependencies. Do not assume every client uses the same setup.</p></div></div>
+<div class="step"><div class="step-num">02</div><div><h3>Download your chosen client</h3><p>Return to the client library above and choose one of the download mirrors. The file should download from the selected third-party host.</p></div></div>
+<div class="step"><div class="step-num">03</div><div><h3>Find your Minecraft mods folder</h3><p>For the standard Minecraft launcher on Windows, open Run and enter <code>%appdata%\.minecraft\mods</code>. Other launchers may use a separate instance or profile folder.</p></div></div>
+<div class="step"><div class="step-num">04</div><div><h3>Install the .jar file</h3><p>Only if the client documentation says it is a compatible mod, place the .jar in the correct profile's mods folder alongside its required dependencies. Do not run an unknown .jar by double-clicking it.</p></div></div>
+<div class="step"><div class="step-num">05</div><div><h3>Launch the matching profile</h3><p>Start Minecraft using the exact game version and mod loader specified by the client creator. If it fails to load, remove the added file and check the creator's troubleshooting instructions.</p></div></div>
+</div>
+</section>
+
+<section class="section wrap" id="faq">
+<div class="section-label">/ ANSWERS</div><h2 class="section-title">Frequently Asked Questions</h2><p class="section-sub">A few things to know before downloading.</p>
+<div class="faq">
+<details><summary>Is this safe for my account?</summary><p>DonutClients cannot guarantee how a third-party client behaves or whether it complies with a server's rules. Review the server rules and the original creator's information before using any client.</p></details>
+<details><summary>Which Minecraft version is supported?</summary><p>Compatibility depends on the individual client. Check its download page or documentation for the supported Minecraft version and mod loader before installing.</p></details>
+<details><summary>Are these files actively maintained?</summary><p>Maintenance is controlled by each original client creator. This site is a link directory and does not control releases or updates.</p></details>
+<details><summary>Are the files secure?</summary><p>Files are hosted externally and have not been independently audited by this website. Scan each download with reputable security software and do not open files you do not trust.</p></details>
+<details><summary>Why are there two download buttons?</summary><p>Each listed client has two external download mirrors. If one host is unavailable, you can try the other. Both links lead away from DonutClients.</p></details>
+</div>
+</section>
+</main>
+<footer class="wrap"><span>© 2026 DONUTCLIENTS</span><span>INDEPENDENT COMMUNITY PROJECT · NOT AFFILIATED WITH DONUTSMP</span></footer>
+</body></html>
