@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="CrackedClient — a collection of cracked clients for DonutSMP.">
+  <title>CrackedClient — Best DonutSMP Cracked Clients</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#090b12;--panel:#111521;--panel2:#151b29;--line:#252d40;--muted:#929bb0;--text:#f4f6fb;--lime:#c4ff54;--cyan:#62e7e2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#202d3c 0,transparent 48%),var(--bg);color:var(--text);font-family:"Space Grotesk",sans-serif;min-height:100vh}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    .topbar{height:76px;border-bottom:1px solid #ffffff12;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.5px;font-size:20px}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#10150a;display:grid;place-items:center;font-weight:900;box-shadow:0 0 28px #c4ff5433}
+    .nav{display:flex;gap:25px;color:var(--muted);font-size:13px}.nav a:hover{color:var(--lime)}
+    .status{font:11px "DM Mono",monospace;color:var(--lime);border:1px solid #c4ff5440;border-radius:30px;padding:8px 12px;letter-spacing:.06em}
+    .hero{text-align:center;padding:91px 0 55px;position:relative}.eyebrow{font:11px "DM Mono",monospace;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;display:inline-flex;gap:9px;align-items:center}.eyebrow:before,.eyebrow:after{content:"";width:22px;height:1px;background:var(--lime);opacity:.65}
+    h1{font-size:clamp(46px,8vw,82px);line-height:.98;letter-spacing:-.075em;margin:22px 0 17px;font-weight:700}.gradient{background:linear-gradient(100deg,#f6f8ff 15%,#c4ff54 75%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:16px;line-height:1.7;max-width:540px;margin:0 auto}.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:29px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:10px;font-weight:700;font-size:13px;transition:.2s;border:1px solid var(--line)}
+    .btn-primary{background:var(--lime);color:#111609;border-color:var(--lime)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px #c4ff5430}
+    .btn-ghost{background:#ffffff08;color:var(--text)}.btn-ghost:hover{border-color:#69758d}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin:25px 0 18px;gap:20px}.section-head h2{font-size:24px;letter-spacing:-.05em;margin:0}.section-head p{color:var(--muted);font-size:12px;margin:6px 0 0}
+    .count{font:11px "DM Mono",monospace;color:var(--muted);border:1px solid var(--line);padding:8px 10px;border-radius:8px}
+    .filters{display:flex;gap:8px;margin:0 0 17px;flex-wrap:wrap}.filter{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:9px 13px;font:12px "DM Mono",monospace;cursor:pointer}.filter.active,.filter:hover{color:var(--lime);border-color:#c4ff5466;background:#c4ff540b}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:80px}.card{background:linear-gradient(150deg,#171e2c,#10141e 75%);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.22s;position:relative}.card:hover{transform:translateY(-5px);border-color:#64704d;box-shadow:0 18px 55px #0006}.card.selected{border-color:#c4ff5480}
+    .art{height:190px;background:radial-gradient(circle at 50% 45%,#2c3c35,#141b27 64%);display:grid;place-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+    .art:before{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 28px #ffffff05,0 0 0 58px #ffffff03}
+    .art img{width:100%;height:100%;object-fit:contain;padding:17px;position:relative;z-index:1}
+    .art-fallback{font-size:42px;font-weight:700;letter-spacing:-.08em;color:#d7ff9b;position:relative;z-index:1;text-shadow:0 0 35px #c4ff5470}
+    .tag{position:absolute;top:13px;left:13px;z-index:2;background:#0b1018cc;border:1px solid #ffffff20;color:#d7e0ef;border-radius:6px;padding:6px 8px;font:10px "DM Mono",monospace}
+    .card-body{padding:17px}.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.card h3{font-size:18px;margin:0;letter-spacing:-.04em}.version{font:10px "DM Mono",monospace;color:var(--lime);background:#c4ff5410;padding:6px 7px;border-radius:5px}
+    .card-desc{font-size:12px;line-height:1.6;color:var(--muted);min-height:38px;margin:10px 0 17px}.download-row{display:flex;gap:8px}.download-row .btn{flex:1;padding:11px 8px;font-size:11px}.download-row .btn-ghost{background:#ffffff05}
+    .notice{margin:0 0 70px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:#ffffff05;display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:12px;line-height:1.6}.notice strong{color:var(--text)}
+    footer{border-top:1px solid #ffffff12;padding:24px 0 34px;color:#778197;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-family:"DM Mono",monospace}
+    .hidden{display:none!important}
+    @media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}.hero{padding-top:70px}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.grid{grid-template-columns:1fr}.art{height:210px}.hero{padding:62px 0 42px}.section-head{align-items:start}.status{font-size:9px}.topbar{height:66px}}
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#"><span class="brand-mark">C</span> CrackedClient</a>
+    <nav class="nav"><a href="#clients">Clients</a><a href="#about">About</a></nav>
+    <span class="status">● DONUTSMP COLLECTION</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">THE CLIENT VAULT</div>
+      <h1><span class="gradient">CrackedClient</span></h1>
+      <p>Find your next client. A clean collection of cracked clients for the DonutSMP community, all in one place.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#clients">Browse clients <span>↘</span></a>
+        <a class="btn btn-ghost" href="#about">What's this? <span>↗</span></a>
+      </div>
+    </section>
+
+    <section id="clients">
+      <div class="section-head">
+        <div><h2>Client selection</h2><p>Choose a client to view its available downloads.</p></div>
+        <span class="count">03 CLIENTS</span>
+      </div>
+      <div class="filters" role="group" aria-label="Filter clients">
+        <button class="filter active" data-filter="all">ALL CLIENTS</button>
+        <button class="filter" data-filter="featured">FEATURED</button>
+      </div>
+      <div class="grid">
+        <article class="card" data-kind="featured">
+          <div class="art">
+            <span class="tag">FEATURED</span>
+            <img src="/corz.png" alt="Corz Client artwork" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span class="art-fallback" style="display:none">CORZ</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top"><h3>Corz Client Cracked</h3><span class="version">CLIENT 01</span></div>
+            <p class="card-desc">Corz Client download options. Choose either mirror below.</p>
+            <div class="download-row">
+              <a class="btn btn-primary" href="https://www.mediafire.com/file/n5p967k5csfprdl/corzclient.jar/file" target="_blank" rel="noopener noreferrer">Download ↗</a>
+              <a class="btn btn-ghost" href="https://gofile.io/d/o9YHwRsK" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-kind="featured">
+          <div class="art">
+            <span class="tag">FEATURED</span>
+            <img src="/67.png" alt="67 Client artwork" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span class="art-fallback" style="display:none">67</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top"><h3>67 Client Cracked</h3><span class="version">CLIENT 02</span></div>
+            <p class="card-desc">67 Client download options. Choose either mirror below.</p>
+            <div class="download-row">
+              <a class="btn btn-primary" href="https://www.mediafire.com/file/o8hynxcea61oogm/677client.jar/file" target="_blank" rel="noopener noreferrer">Download ↗</a>
+              <a class="btn btn-ghost" href="https://gofile.io/d/jZTYIPMd" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-kind="featured">
+          <div class="art">
+            <span class="tag">FEATURED</span>
+            <img src="/gooba.png" alt="Gooba V2 Client artwork" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span class="art-fallback" style="display:none">GOOBA</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top"><h3>Gooba V2 Client Cracked</h3><span class="version">CLIENT 03</span></div>
+            <p class="card-desc">Gooba V2 Client download options. Choose either mirror below.</p>
+            <div class="download-row">
+              <a class="btn btn-primary" href="https://www.mediafire.com/file/35kbffe0dwflsho/GoobaCracked.jar/file" target="_blank" rel="noopener noreferrer">Download ↗</a>
+              <a class="btn btn-ghost" href="https://gofile.io/d/cr2YobCo" target="_blank" rel="noopener noreferrer">Mirror 2 ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="notice">
+      <span style="font-size:18px">ⓘ</span>
+      <div><strong>Before you download</strong><br>Downloads are hosted by external file-sharing services. Check files with your antivirus and only run software you trust. CrackedClient is a community listing and is not affiliated with DonutSMP or the client creators.</div>
+    </section>
+  </main>
+
+  <footer class="wrap"><span>© 2026 CRACKEDCLIENT</span><span>BUILT FOR THE DONUTSMP COMMUNITY</span></footer>
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('.card');
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.toggle('active', item === button));
+      cards.forEach(card => card.classList.toggle('hidden', button.dataset.filter !== 'all' && card.dataset.kind !== button.dataset.filter));
+    }));
+    cards.forEach(card => card.addEventListener('click', event => {
+      if (event.target.closest('a')) return;
+      cards.forEach(item => item.classList.toggle('selected', item === card));
+    }));
+  </script>
+</body>
+</html>
